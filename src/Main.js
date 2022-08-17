@@ -1,7 +1,7 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
 import Data from './data.json';
-import { getValue } from "@testing-library/user-event/dist/utils";
+
 class Main extends React.Component {
 
 
