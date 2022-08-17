@@ -1,17 +1,26 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
-
+import Data from './data.json';
+import { getValue } from "@testing-library/user-event/dist/utils";
 class Main extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
+
+  
+
+ 
+
+  
+
 
   render() {
     return (
       <div>
-        <HornedBeast title="Beast 1" imageUrl='https://via.placeholder.com/150/' description='description goes here'/>
-        <HornedBeast title="Beast 2" imageUrl='https://via.placeholder.com/150/' description='description goes here'/>
+        {
+          Data.map(value => {
+          return <HornedBeast title={value.title} imageUrl={value.image_url} description={value.description}/>
+        })
+        }
+        
 
       </div>
     )
