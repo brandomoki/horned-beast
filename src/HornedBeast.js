@@ -1,6 +1,11 @@
 import React from 'react';
-import VotesButton from './VotesButton';
-import SelectedBeast from './SelectedBeast';
+import Button from 'react-bootstrap/Button';
+
+import Card from 'react-bootstrap/Card';
+
+
+
+
 
 
 class HornedBeast extends React.Component {
@@ -23,22 +28,21 @@ class HornedBeast extends React.Component {
 
     return (
 
-      <div>
-        <h2>{this.props.title}</h2>
-        <h2>Hearts: {this.state.count}</h2>
+      
 
-        <img 
-        src={this.props.imageUrl} 
-        alt={this.props.description}
-        onClick={this.props.show} 
-        >
-        </img>
+      <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={this.props.imageUrl} />
 
-        <p>{this.props.description}</p>
+          <Card.Body onClick={this.props.open}>
+            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Text>
+              {this.props.description}
+            </Card.Text>
+            <Card.Text>{this.state.count}</Card.Text>
+            <Button onClick={this.oneUp} variant="primary">Vote</Button>
+          </Card.Body>
 
-        <VotesButton prompt='Vote Here' handleClick={this.oneUp}/> 
-
-      </div>
+        </Card>
 
     )
   }
