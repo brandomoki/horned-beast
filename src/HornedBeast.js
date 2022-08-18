@@ -1,5 +1,6 @@
 import React from 'react';
-// import VotesButton from './VotesButton';
+import VotesButton from './VotesButton';
+import SelectedBeast from './SelectedBeast';
 
 
 class HornedBeast extends React.Component {
@@ -28,12 +29,14 @@ class HornedBeast extends React.Component {
 
         <img 
         src={this.props.imageUrl} 
-        alt={this.props.description} 
-        onClick={this.oneUp}></img>
+        alt={this.props.description}
+        onClick={this.props.show} 
+        >
+        </img>
 
         <p>{this.props.description}</p>
 
-        {/* <VotesButton prompt='Vote Here' handleClick={this.oneUp}/> */}
+        <VotesButton prompt='Vote Here' handleClick={this.oneUp}/> 
 
       </div>
 
