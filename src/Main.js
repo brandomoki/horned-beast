@@ -1,7 +1,6 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
-import Data from './data.json';
-import SelectedBeast from './SelectedBeast'
+
 
 class Main extends React.Component {
 
@@ -27,11 +26,16 @@ class Main extends React.Component {
     return (
       <main>
         {
-          Data.map(value => {
-          return <HornedBeast key={value._id} open={this.handleShow} title={value.title} imageUrl={value.image_url} description={value.description}/>
+          this.props.beastArry.map(value => {
+          return <HornedBeast 
+          key={value._id} 
+          open={this.props.handleShow} 
+          title={value.title} 
+          imageUrl={value.image_url} 
+          description={value.description}/>
         })
         }
-        <SelectedBeast />
+        
         
 
       </main>

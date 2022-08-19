@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+
 
 import Card from 'react-bootstrap/Card';
 
@@ -30,16 +30,16 @@ class HornedBeast extends React.Component {
 
       
 
-      <Card style={{ width: '18rem' }}>
+      <Card onClick={this.oneUp} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={this.props.imageUrl} />
 
-          <Card.Body onClick={this.props.open}>
-            <Card.Title>{this.props.title}</Card.Title>
+          <Card.Body >
+            <Card.Title>{ () => this.props.title }</Card.Title>
             <Card.Text>
               {this.props.description}
             </Card.Text>
             <Card.Text>{this.state.count}</Card.Text>
-            <Button onClick={this.oneUp} variant="primary">Vote</Button>
+            
           </Card.Body>
 
         </Card>
