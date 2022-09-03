@@ -12,15 +12,25 @@ class App extends React.Component {
     super(props);
     this.state = { 
       show: false,
-      clickedBeast: null
+      clickedBeast: {},
     }
   }
 
   
 
+  handleClose = () => {
  
 
+    this.setState({show: false})
+   }
 
+   handleShow = (beast) => {
+   
+    this.setState({clickedBeast: beast, show: true})
+   }
+ 
+
+/// 
 
 
 
@@ -33,15 +43,19 @@ class App extends React.Component {
 
         <Main 
         beastArry={Data} 
-        handleClick={this.handleClick} 
-        open={this.handleShow}/>
+        
+       
+        handleShow={this.handleShow}/>
 
        <Footer />
 
        <SelectedBeast 
        show={this.state.show} 
        closeModal={this.handleClose} 
-       openModal={this.handleShow} />
+       
+       clickedBeast={this.state.clickedBeast}
+
+        />
       </div>
      );
 

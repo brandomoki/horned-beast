@@ -10,16 +10,21 @@ class SelectedBeast extends React.Component {
 
 
   render() {
+    console.log('clicked beast', this.props.clickedBeast)
+
 
     return (
       <>
-        <Modal show={this.props.open} onHide={this.props.closeModal}>
+        <Modal show={this.props.show} onHide={this.props.closeModal}>
           
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.props.clickedBeast?.title}</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Body>
+            <img src={this.props.clickedBeast?.image_url} width="250" alt={this.props.clickedBeast?.title} />
+            
+          </Modal.Body>
 
           <Modal.Footer>
             <Button variant="secondary" onClick={this.props.closeModal}>

@@ -11,27 +11,28 @@ import Card from 'react-bootstrap/Card';
 class HornedBeast extends React.Component {
 
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { count: 0 }
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 }
+  }
 
-  // oneUpVotes = (e) => {
-  //   let newState = {
-  //     count: this.state.count + 1
-  //   }
-  //   this.setState(newState)
-  // }
+  oneUpVotes = () => {
+    
+    this.setState({count: this.state.count + 1})
+    this.props.openModal(this.props.beast)
+  }
   
 
   render() {
+    console.log('this is state', this.state)
+    console.log('props', this.props);
     
 
     return (
 
       
 
-      <Card onClick={this.props.countUp} style={{ width: '18rem' }}>
+      <Card onClick={this.oneUpVotes} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={this.props.imageUrl} />
 
           <Card.Body >
@@ -39,7 +40,7 @@ class HornedBeast extends React.Component {
             <Card.Text>
               {this.props.description}
             </Card.Text>
-            <Card.Text>{this.props.count}</Card.Text>
+            <Card.Text>{this.state.count}</Card.Text>
             
           </Card.Body>
 
