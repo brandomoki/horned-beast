@@ -24,8 +24,8 @@ class HornedBeast extends React.Component {
   
 
   render() {
-    console.log('this is state', this.state)
-    console.log('props', this.props);
+    // console.log('this is state', this.state)
+    // console.log('props', this.props);
     
 
     return (

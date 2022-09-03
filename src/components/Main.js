@@ -23,7 +23,7 @@ class Main extends React.Component {
     return (
       <main>
         {
-          this.props.beastArry.map(value => {
+          this.props.beastArry?.map(value => {
           return <HornedBeast 
           openModal={this.props.handleShow}
           
